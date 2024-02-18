@@ -1,5 +1,7 @@
 
 using BankApplicationRestApi.Business;
+using BankApplicationRestApi.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
 namespace BankApplicationRestApi
@@ -18,6 +20,8 @@ namespace BankApplicationRestApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //db resolve and initialize
+            builder.Services.AddDbContext<BankApplicationContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("BankApplicationConnection")));
 
             #region Scrutor resolvers  
             var typeBaseService = typeof(BaseService);
