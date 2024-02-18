@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BankApplicationRestApi.Domain\BankApplicationRestApi.Domain.csproj" />
+    <ProjectReference Include="..\BankApplicationRestApi.Infrastructure\BankApplicationRestApi.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
